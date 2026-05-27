@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ── SEO primário ──────────────────────────────────────────────────── -->
+  <title>Claude Code e Antigravity na Prática — Curso para Servidores da Justiça</title>
+  <meta name="description" content="Curso ao vivo de IA agêntica para servidores da Justiça: Claude Code e Antigravity na Prática. 10 horas em 3 encontros no Google Meet. Do chat à automação supervisionada — sem precisar saber programar.">
+  <meta name="author" content="Wesley Wagner de Brito Silva">
+  <meta name="robots" content="index, follow">
+  <!-- Substitua pelo domínio real antes do deploy -->
+  <link rel="canonical" href="https://SEUDOMINIO.netlify.app/">
+
+  <!-- ── Open Graph (WhatsApp, LinkedIn, Facebook) ────────────────────── -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Claude Code e Antigravity na Prática — Curso para Servidores da Justiça">
+  <meta property="og:description" content="Curso ao vivo de IA agêntica para servidores da Justiça. 10 horas em 3 encontros no Google Meet. Do chat à automação supervisionada — sem precisar saber programar.">
+  <meta property="og:image" content="assets/wesley-photo-clean.png">
+  <!-- Substitua pela URL real antes do deploy -->
+  <meta property="og:url" content="https://SEUDOMINIO.netlify.app/">
+
+  <!-- ── Twitter / X Card ──────────────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Code e Antigravity na Prática — Curso para Servidores da Justiça">
+  <meta name="twitter:description" content="Curso ao vivo de IA agêntica para servidores da Justiça. 10h, 3 encontros no Google Meet.">
+  <meta name="twitter:image" content="assets/wesley-photo-clean.png">
+
+  <!-- ── Favicon (inline SVG — sem dependência externa) ───────────────── -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='26'>⚖️</text></svg>">
+
+  <!-- ── Dados estruturados JSON-LD (Google Rich Results) ─────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Claude Code e Antigravity na Prática: IA de Agentes para Servidores da Justiça",
+    "description": "Curso ao vivo de IA agêntica para servidores da Justiça. 10 horas em 3 encontros no Google Meet. Do chat à automação supervisionada.",
+    "provider": {
+      "@type": "Person",
+      "name": "Wesley Wagner de Brito Silva",
+      "jobTitle": "Técnico Judiciário · TRE-PB"
+    },
+    "inLanguage": "pt-BR",
+    "timeRequired": "PT10H",
+    "courseMode": "online",
+    "educationalLevel": "Beginner",
+    "teaches": "Ferramentas de IA agêntica (Claude Code e Antigravity) aplicadas a rotinas do judiciário",
+    "availableLanguage": {
+      "@type": "Language",
+      "name": "Portuguese"
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0d1424;
+      --hero-bg:      linear-gradient(135deg, #06152e, #0d1f3c);
+      --gold:         #c3992e;
+      --gold-dim:     rgba(195, 153, 46, 0.15);
+      --gold-border:  rgba(195, 153, 46, 0.3);
+      --gold-faint:   rgba(195, 153, 46, 0.06);
+      --blue:         #2e68a8;
+      --blue-dim:     rgba(46, 104, 168, 0.07);
+      --green:        #6b8c42;
+      --green-dim:    rgba(107, 140, 66, 0.07);
+      --green-bright: #8ab857;
+      --text:         #ffffff;
+      --text-sec:     #8899bb;
+      --text-list:    #cdd5e0;
+      --sep:          rgba(255, 255, 255, 0.06);
+      --card-bg:      rgba(255, 255, 255, 0.04);
+      --card-border:  rgba(255, 255, 255, 0.08);
+      --font: "Segoe UI", "Aptos", "Calibri", sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LAYOUT ── */
+    .section {
+      padding: 56px 24px;
+      border-bottom: 1px solid var(--sep);
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .section-label {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--hero-bg);
+      border-bottom: 1px solid rgba(195, 153, 46, 0.2);
+      padding: 72px 24px 64px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .hero-subtitle {
+      color: var(--text-sec);
+      font-size: clamp(14px, 2vw, 17px);
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    /* Datas */
+    .hero-dates {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .hero-date {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 6px;
+      padding: 7px 14px;
+      font-size: 13px;
+    }
+    .enc-label {
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .enc-sep { color: rgba(255,255,255,0.2); }
+    .enc-date { color: var(--text-list); font-weight: 600; }
+
+    /* Pills */
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+    .pill {
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-border);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    /* CTA */
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: #0d1424;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 16px 40px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: opacity 0.15s;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+
+    /* ── O QUE VOCÊ VAI APRENDER ── */
+    .cards-aprender {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card-encontro {
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+    }
+    .card-encontro.gold  { border-left: 4px solid var(--gold);  background: var(--gold-faint); }
+    .card-encontro.blue  { border-left: 4px solid var(--blue);  background: var(--blue-dim); }
+    .card-encontro.green { border-left: 4px solid var(--green); background: var(--green-dim); }
+
+    .card-enc-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .card-enc-tag.gold  { color: var(--gold); }
+    .card-enc-tag.blue  { color: var(--blue); }
+    .card-enc-tag.green { color: var(--green-bright); }
+
+    .card-enc-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .card-enc-desc {
+      font-size: 13px;
+      color: var(--text-sec);
+      line-height: 1.5;
+    }
+
+    /* ── BOTÃO EMENTA ── */
+    .ementa-wrapper {
+      padding: 32px 24px 40px;
+      border-bottom: 1px solid var(--sep);
+      text-align: center;
+      background: rgba(195, 153, 46, 0.02);
+    }
+    .btn-ementa {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(195, 153, 46, 0.08);
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: background 0.15s;
+    }
+    .btn-ementa:hover { background: rgba(195, 153, 46, 0.16); }
+    .btn-ementa .icon { font-size: 18px; }
+    .ementa-sub {
+      color: var(--text-sec);
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    /* ── TEASER ── */
+    .teaser-section {
+      background: rgba(195, 153, 46, 0.03);
+      border-bottom: 1px solid var(--sep);
+      padding: 48px 24px;
+    }
+    .teaser-box {
+      max-width: 560px;
+      margin: 0 auto;
+      border: 1px solid rgba(195, 153, 46, 0.25);
+      border-radius: 12px;
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .teaser-icon { font-size: 28px; margin-bottom: 12px; }
+    .teaser-label {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .teaser-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .teaser-text {
+      color: var(--text-sec);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ── PARA QUEM É ── */
+    .audience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .audience-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      font-size: 15px;
+      color: var(--text-list);
+      line-height: 1.5;
+    }
+    .audience-check {
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+      font-size: 16px;
+    }
+    .audience-item.nope .audience-check { color: rgba(255,255,255,0.25); }
+    .audience-item.nope span:last-child  { color: var(--text-sec); }
+
+    /* ── SOBRE O INSTRUTOR ── */
+    .instructor-top {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 22px;
+      align-items: start;
+      margin-bottom: 20px;
+    }
+    .instructor-photo {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: 50% 15%;
+      border: 2px solid rgba(195, 153, 46, 0.5);
+      display: block;
+    }
+    .instructor-name {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .instructor-role {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .instructor-sub {
+      color: var(--text-sec);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .instructor-bio {
+      color: var(--text-list);
+      font-size: 14px;
+      line-height: 1.75;
+      border-left: 3px solid rgba(195, 153, 46, 0.35);
+      padding-left: 16px;
+      margin-bottom: 28px;
+    }
+    .projects-label {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .project-card-body { flex: 1; min-width: 0; }
+    .project-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .project-card-desc {
+      color: var(--text-sec);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .badge-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-border);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .badge-link:hover { background: rgba(195, 153, 46, 0.25); }
+
+    /* ── INVESTIMENTO ── */
+    .investment-section {
+      padding: 64px 24px;
+      text-align: center;
+    }
+    .investment-price {
+      font-size: clamp(36px, 6vw, 52px);
+      font-weight: 800;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+    .investment-sub {
+      color: var(--text-sec);
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 500px) {
+      .section { padding: 44px 18px; }
+      .hero { padding: 56px 18px 48px; }
+      .instructor-top {
+        grid-template-columns: 72px 1fr;
+        gap: 16px;
+      }
+      .instructor-photo { width: 72px; height: 72px; }
+      .instructor-name { font-size: 17px; }
+      .hero-date { font-size: 12px; padding: 6px 11px; }
+      .btn-primary { font-size: 14px; padding: 14px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">▸ AULA AO VIVO · PLATAFORMA GOOGLE MEET</div>
+
+      <h1 class="hero-title">Claude Code e Antigravity<br>na Prática</h1>
+      <p class="hero-subtitle">Do chat à automação supervisionada para servidores da Justiça</p>
+
+      <div class="hero-dates">
+        <div class="hero-date">
+          <span class="enc-label">Encontro 1</span>
+          <span class="enc-sep">·</span>
+          <span class="enc-date">[DATA 1]</span>
+        </div>
+        <div class="hero-date">
+          <span class="enc-label">Encontro 2</span>
+          <span class="enc-sep">·</span>
+          <span class="enc-date">[DATA 2]</span>
+        </div>
+        <div class="hero-date">
+          <span class="enc-label">Encontro 3</span>
+          <span class="enc-sep">·</span>
+          <span class="enc-date">[DATA 3]</span>
+        </div>
+      </div>
+
+      <div class="hero-pills">
+        <span class="pill">10 horas</span>
+        <span class="pill">3 encontros ao vivo</span>
+        <span class="pill">Claude Code + Antigravity</span>
+      </div>
+
+      <a href="#link-hotmart" class="btn-primary" target="_blank" rel="noopener noreferrer">
+        GARANTIR MINHA VAGA →
+      </a>
+    </div>
+  </section>
+
+
+  <!-- O QUE VOCÊ VAI APRENDER -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">O que você vai aprender</div>
+
+      <div class="cards-aprender">
+        <div class="card-encontro gold">
+          <div class="card-enc-tag gold">Encontro 1 · 4h</div>
+          <div class="card-enc-title">Do chat ao agente: entenda o salto</div>
+          <div class="card-enc-desc">Navegue nas duas interfaces e gere artefatos visuais ao vivo a partir de um documento real</div>
+        </div>
+
+        <div class="card-encontro blue">
+          <div class="card-enc-tag blue">Encontro 2 · 3h</div>
+          <div class="card-enc-title">Coloque as ferramentas para trabalhar</div>
+          <div class="card-enc-desc">Pesquisa jurídica assistida, análise de peças processuais e skills prontas para o judiciário</div>
+        </div>
+
+        <div class="card-encontro green">
+          <div class="card-enc-tag green">Encontro 3 · 3h</div>
+          <div class="card-enc-title">Construa algo real ao vivo</div>
+          <div class="card-enc-desc">Crie sua própria skill e acompanhe a construção de um projeto real ao vivo — o tema é revelado no encontro</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BOTÃO EMENTA -->
+  <div class="ementa-wrapper">
+    <a href="ementa/index.html" class="btn-ementa" target="_blank" rel="noopener noreferrer">
+      <span class="icon">📄</span> Ver ementa completa do curso
+    </a>
+    <p class="ementa-sub">Conteúdo detalhado, objetivos e carga horária por encontro</p>
+  </div>
+
+
+  <!-- TEASER PROJETO SURPRESA -->
+  <section class="teaser-section">
+    <div class="teaser-box">
+      <div class="teaser-icon">🔒</div>
+      <div class="teaser-label">Projeto Prático — Encontro 3</div>
+      <p class="teaser-title">No terceiro encontro, você acompanha a construção de um mini-software ao vivo.</p>
+      <p class="teaser-text">O tema é revelado apenas no dia — faz parte da experiência do curso.</p>
+    </div>
+  </section>
+
+
+  <!-- PARA QUEM É -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Para quem é este curso</div>
+
+      <div class="audience-list">
+        <div class="audience-item">
+          <span class="audience-check">✓</span>
+          <span>Servidores da Justiça Eleitoral, do Trabalho e demais ramos</span>
+        </div>
+        <div class="audience-item">
+          <span class="audience-check">✓</span>
+          <span>Quem já usa ChatGPT, Gemini ou Claude.ai mas quer ir além do chat</span>
+        </div>
+        <div class="audience-item">
+          <span class="audience-check">✓</span>
+          <span>Quem quer gerar documentos, fluxogramas e análises com IA agêntica</span>
+        </div>
+        <div class="audience-item nope">
+          <span class="audience-check">✗</span>
+          <span>Não é necessário saber programar</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SOBRE O INSTRUTOR -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Sobre o instrutor</div>
+
+      <div class="instructor-top">
+        <img
+          src="assets/wesley-photo-clean.png"
+          alt="Wesley Wagner de Brito Silva — instrutor do curso"
+          class="instructor-photo"
+          width="88"
+          height="88"
+          loading="lazy"
+        >
+        <div>
+          <div class="instructor-name">Wesley Wagner de Brito Silva</div>
+          <div class="instructor-role">Técnico Judiciário · TRE-PB</div>
+          <div class="instructor-sub">Chefe de Cartório da 56ª Zona Eleitoral de Juazeirinho/PB desde 2018</div>
+        </div>
+      </div>
+
+      <p class="instructor-bio">
+        Instrutor de cursos de IA para servidores da Justiça Eleitoral desde 2024. Ministrou treinamentos nos TREs do Amazonas e da Paraíba e capacitou magistrados e servidores no uso do MinutaIA. Gestor do projeto de integração de IA na elaboração de pareceres técnicos no TRE-PB.
+      </p>
+
+      <div class="projects-label">Projetos desenvolvidos</div>
+
+      <div class="projects-list">
+        <div class="project-card">
+          <div class="project-card-body">
+            <div class="project-card-title">Mega Agente Eleitoral</div>
+            <div class="project-card-desc">Sistema multiagente para apoio a rotinas jurídicas e administrativas da Justiça Eleitoral</div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-body">
+            <div class="project-card-title">ELIS — Engenharia Legal e Inteligente de Sentenças</div>
+            <div class="project-card-desc">Agente especializado em análise de processo e elaboração de minutas jurídicas</div>
+          </div>
+          <a href="https://github.com/Wesley8pb/ELIS.git" class="badge-link" target="_blank" rel="noopener noreferrer" aria-label="ELIS no GitHub">
+            ↗ GitHub
+          </a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-body">
+            <div class="project-card-title">Calendário Eleitoral Interativo</div>
+            <div class="project-card-desc">Adotado oficialmente pelo TRE-PB para as Eleições 2026</div>
+          </div>
+          <a href="https://calendarioeleitoral.app.br/" class="badge-link" target="_blank" rel="noopener noreferrer" aria-label="Calendário Eleitoral Interativo — site oficial">
+            ↗ site
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- INVESTIMENTO + CTA FINAL -->
+  <section class="investment-section">
+    <div class="container">
+      <div class="section-label" style="display:block;">Investimento</div>
+      <div class="investment-price">R$ XXX,00</div>
+      <p class="investment-sub">Pagamento seguro via Hotmart</p>
+      <a href="#link-hotmart" class="btn-primary" target="_blank" rel="noopener noreferrer">
+        GARANTIR MINHA VAGA →
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>

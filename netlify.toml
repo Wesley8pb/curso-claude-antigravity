@@ -1,0 +1,57 @@
+# ── Netlify Configuration ──────────────────────────────────────────────────
+# Curso: Claude Code e Antigravity na Prática
+# Substitua o domínio canônico antes do deploy final.
+
+[build]
+  publish = "."
+
+# ── Headers globais de segurança ───────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Impede clickjacking
+    X-Frame-Options = "DENY"
+
+    # Impede MIME sniffing
+    X-Content-Type-Options = "nosniff"
+
+    # Controla quais informações são enviadas no cabeçalho Referer
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Desabilita APIs sensíveis do browser
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), bluetooth=()"
+
+    # HSTS: força HTTPS por 1 ano
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # CSP: site 100% estático, sem JS externo, sem fontes externas, sem iframes
+    # unsafe-inline permitido apenas para estilos (CSS inline nas páginas)
+    Content-Security-Policy = "default-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'"
+
+    # Não expõe a plataforma de hospedagem
+    X-Powered-By = ""
+
+# ── Cache para HTML: sem cache (conteúdo atualizado com frequência) ─────────
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ── Cache longo para assets estáticos ──────────────────────────────────────
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ── Redirect: garantir trailing slash na ementa ────────────────────────────
+[[redirects]]
+  from = "/ementa"
+  to   = "/ementa/"
+  status = 301
+  force  = false
+
+# ── 404 personalizado (opcional — criar deploy/404.html se desejar) ─────────
+# [[redirects]]
+#   from   = "/*"
+#   to     = "/404.html"
+#   status = 404

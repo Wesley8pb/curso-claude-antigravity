@@ -1,0 +1,1013 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ── SEO primário ──────────────────────────────────────────────────── -->
+  <title>Ementa — Claude Code e Antigravity na Prática: IA de Agentes para Servidores da Justiça</title>
+  <meta name="description" content="Ementa completa do curso Claude Code e Antigravity na Prática: conteúdo detalhado por encontro, objetivos específicos, carga horária e perfil do instrutor Wesley Wagner de Brito Silva.">
+  <meta name="author" content="Wesley Wagner de Brito Silva">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://SEUDOMINIO.netlify.app/ementa/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Ementa — Claude Code e Antigravity na Prática">
+  <meta property="og:description" content="Ementa completa: conteúdo por encontro, objetivos e perfil do instrutor.">
+  <meta property="og:image" content="../assets/wesley-photo-clean.png">
+  <meta property="og:url" content="https://SEUDOMINIO.netlify.app/ementa/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='26'>⚖️</text></svg>">
+
+  <style>
+    @page {
+      size: 210mm 297mm;
+      margin: 12mm 15mm;
+    }
+
+    :root {
+      --paper: #f3f6fb;
+      --ink: #0d1424;
+      --muted: #3f4b5f;
+      --navy: #071b3a;
+      --blue: #153f7f;
+      --blue-2: #2e68a8;
+      --gold: #c3992e;
+      --green: #14815b;
+      --red: #9b2d2d;
+      --line: #d8e1ef;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #dfe5ef;
+      color: var(--ink);
+      font-family: "Segoe UI", "Aptos", "Calibri", sans-serif;
+      text-rendering: geometricPrecision;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── PAGE WRAPPER ── */
+    .page {
+      position: relative;
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--paper);
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    @media screen {
+      .page {
+        margin: 8mm auto;
+        box-shadow: 0 4px 24px rgba(7,27,58,0.18);
+      }
+    }
+
+    @media print {
+      html, body {
+        background: transparent;
+      }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+        break-after: page;
+      }
+      .page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+    }
+
+    /* ── COVER ── */
+    .cover {
+      width: 210mm;
+      min-height: 297mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      color: white;
+      padding: 18mm 16mm 14mm;
+      background:
+        radial-gradient(circle at 76% 38%, rgba(69, 156, 232, 0.22), transparent 32%),
+        radial-gradient(circle at 96% 8%, rgba(195, 153, 46, 0.18), transparent 24%),
+        linear-gradient(135deg, #06152e 0%, #092448 58%, #071b3a 100%);
+      position: relative;
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-radial-gradient(circle at 80% 48%, rgba(128, 194, 245, 0.23) 0 1px, transparent 2px 22px),
+        linear-gradient(120deg, transparent 0 54%, rgba(255,255,255,0.04) 54% 55%, transparent 55% 100%);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .cover > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 10pt;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin: 0 0 6mm;
+    }
+
+    .cover-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(195,153,46,0.15);
+      border: 1px solid rgba(195,153,46,0.35);
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin-bottom: 10mm;
+      font-size: 8pt;
+      color: #e8c96a;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+
+    .cover h1 {
+      color: white;
+      font-size: 26pt;
+      line-height: 1.12;
+      font-weight: 750;
+      letter-spacing: -0.01em;
+      margin: 0 0 7mm;
+      max-width: 168mm;
+    }
+
+    .cover .subtitle {
+      color: #d9e9ff;
+      font-size: 12pt;
+      line-height: 1.48;
+      margin-bottom: 8mm;
+      max-width: 152mm;
+    }
+
+    .rule {
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+      margin: 8mm 0;
+      opacity: 0.85;
+    }
+
+    .cover-visual {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12mm 0;
+    }
+
+    .cover-icon-cluster {
+      display: flex;
+      gap: 12mm;
+      align-items: center;
+    }
+
+    .cover-icon-box {
+      width: 38mm;
+      height: 38mm;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .cover-icon-box .icon-symbol {
+      font-size: 22pt;
+    }
+
+    .cover-icon-box .icon-label {
+      font-size: 8pt;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .cover-arrow {
+      font-size: 20pt;
+      color: var(--gold);
+      opacity: 0.8;
+    }
+
+    .cover-meta {
+      color: #c1d5ef;
+      font-size: 10pt;
+      line-height: 1.9;
+      margin-top: 4mm;
+    }
+
+    .cover-meta strong {
+      color: white;
+    }
+
+    .cover-meta-pills {
+      display: flex;
+      gap: 5mm;
+      flex-wrap: wrap;
+      margin-top: 6mm;
+    }
+
+    .pill {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 12pt;
+      color: #d9e9ff;
+      font-weight: 600;
+    }
+
+    /* ── INNER PAGES ── */
+    .inner-page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 10mm 15mm 12mm;
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 6mm;
+    }
+
+    .section-label {
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+    }
+
+    .section-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    h2.section-title {
+      font-size: 17pt;
+      font-weight: 750;
+      color: var(--blue);
+      line-height: 1.1;
+      margin: 0 0 6mm;
+    }
+
+    /* ── PROFILE LAYOUT ── */
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 72mm 1fr;
+      gap: 10mm;
+      align-items: start;
+    }
+
+    .portrait {
+      width: 72mm;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(7,27,58,0.2);
+      display: block;
+      overflow: visible;
+    }
+
+    .profile-name {
+      font-size: 14pt;
+      font-weight: 750;
+      color: var(--navy);
+      line-height: 1.15;
+      margin: 0 0 2mm;
+    }
+
+    .profile-role {
+      font-size: 12pt;
+      color: var(--blue-2);
+      font-weight: 600;
+      margin: 0 0 5mm;
+      line-height: 1.4;
+    }
+
+    .profile-group {
+      margin-bottom: 4mm;
+    }
+
+    .profile-group-title {
+      font-size: 9pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 2mm;
+    }
+
+    .profile-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .profile-list li {
+      position: relative;
+      padding-left: 10px;
+      margin-bottom: 2px;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+
+    .profile-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* ── OBJECTIVE BLOCK ── */
+    .objective-block {
+      background: white;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      padding: 6mm 8mm;
+      font-size: 10.5pt;
+      line-height: 1.6;
+      color: var(--ink);
+      box-shadow: 0 2px 8px rgba(7,27,58,0.07);
+    }
+
+    /* ── INFO GRID ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4mm;
+      margin-top: 4mm;
+    }
+
+    .info-cell {
+      background: white;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue-2);
+      padding: 4mm 5mm;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .info-cell.gold {
+      border-left-color: var(--gold);
+    }
+
+    .info-label {
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 1.5mm;
+    }
+
+    .info-value {
+      font-size: 10pt;
+      font-weight: 650;
+      color: var(--navy);
+      line-height: 1.35;
+    }
+
+    /* ── SPECIFIC OBJECTIVES LIST ── */
+    .obj-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      columns: 2;
+      column-gap: 8mm;
+    }
+
+    .obj-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 3.5mm;
+      font-size: 12pt;
+      line-height: 1.5;
+      color: var(--ink);
+      break-inside: avoid;
+    }
+
+    .obj-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* ── ENCONTRO CARDS ── */
+    .encontro-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(7,27,58,0.07);
+      margin-bottom: 5mm;
+      break-inside: avoid;
+    }
+
+    .encontro-header {
+      padding: 4.5mm 6mm;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5mm;
+    }
+
+    .encontro-header.navy     { background: var(--navy);   color: white; }
+    .encontro-header.blue-2   { background: var(--blue-2); color: white; }
+    .encontro-header.gold-dark{ background: #7a5c10;       color: white; }
+
+    .encontro-title {
+      font-size: 12pt;
+      font-weight: 750;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .encontro-focus {
+      font-size: 8.5pt;
+      opacity: 0.88;
+      line-height: 1.4;
+      margin: 0;
+      font-style: italic;
+    }
+
+    /* ── SCHEDULE TABLE ── */
+    .sched-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10.5pt;
+    }
+
+    .sched-table th {
+      text-align: left;
+      padding: 3mm 4mm;
+      font-weight: 700;
+      font-size: 9pt;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line);
+      background: #f8fafd;
+    }
+
+    .sched-table td {
+      padding: 3mm 4mm;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+
+    .sched-table tr:last-child td { border-bottom: none; }
+    .sched-table tr:nth-child(even) td { background: rgba(216,225,239,0.22); }
+
+    .sched-table td.dur {
+      white-space: nowrap;
+      font-weight: 700;
+      color: var(--blue-2);
+      width: 20mm;
+    }
+
+    .sched-table td.block {
+      font-weight: 700;
+      color: var(--navy);
+      width: 44mm;
+    }
+
+    /* ── RESULTS LIST ── */
+    .results-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .results-list li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 4mm;
+      font-size: 9.5pt;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .results-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* ── FOOTER STRIP ── */
+    .footer-strip {
+      margin-top: auto;
+      padding-top: 6mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-label { font-size: 7.5pt; color: var(--muted); font-weight: 600; }
+    .footer-page  { font-size: 7.5pt; color: #9aa7bb; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: rgba(21, 63, 127, 0.06);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 5px 5px 0;
+      padding: 3mm 5mm;
+      margin-top: 4mm;
+      font-size: 8.5pt;
+      color: var(--muted);
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    /* ── UTILITIES ── */
+    h3, h4 { margin: 0; }
+    .mt-2 { margin-top: 2mm; }
+    .mt-4 { margin-top: 4mm; }
+    .mt-5 { margin-top: 5mm; }
+    .mt-6 { margin-top: 6mm; }
+    .mb-4 { margin-bottom: 4mm; }
+    .text-gold  { color: var(--gold); }
+    .text-blue  { color: var(--blue); }
+    .text-muted { color: var(--muted); }
+    .spacer { flex: 1; }
+  </style>
+</head>
+<body>
+
+<!-- PÁGINA 1 — CAPA -->
+<div class="page cover">
+  <div class="cover-badge">&#9670;&nbsp; Ementa do Curso</div>
+  <p class="kicker">Tribunal Regional Eleitoral &nbsp;·&nbsp; Curso de Capacitação em IA</p>
+  <h1>Claude Code e Antigravity na Prática:<br>IA de Agentes para Servidores da Justiça</h1>
+  <p class="subtitle">
+    Do chat à automação supervisionada — uso produtivo e seguro de ferramentas de IA agêntica nas rotinas do judiciário
+  </p>
+  <div class="rule"></div>
+  <!-- Botão de retorno -->
+  <div style="text-align:center; margin-bottom:8mm;">
+    <a href="../index.html"
+       style="display:inline-flex; align-items:center; gap:9px;
+              background:rgba(195,153,46,0.12); border:1.5px solid rgba(195,153,46,0.55);
+              color:#e8c96a; font-family:'Segoe UI','Aptos','Calibri',sans-serif;
+              font-size:9.5pt; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
+              padding:8px 22px; border-radius:6px; text-decoration:none;">
+      ← Voltar ao site do curso
+    </a>
+  </div>
+
+  <div class="cover-visual">
+    <div class="cover-icon-cluster">
+      <div class="cover-icon-box">
+        <span class="icon-symbol">&#128172;</span>
+        <span class="icon-label">Chat IA</span>
+      </div>
+      <div class="cover-arrow">&#8594;</div>
+      <div class="cover-icon-box">
+        <span class="icon-symbol">&#129302;</span>
+        <span class="icon-label">IA Agêntica</span>
+      </div>
+      <div class="cover-arrow">&#8594;</div>
+      <div class="cover-icon-box">
+        <span class="icon-symbol">&#9878;</span>
+        <span class="icon-label">Resultado Concreto</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-meta-pills">
+    <span class="pill">&#128336;&nbsp; 10 horas</span>
+    <span class="pill">&#128197;&nbsp; 3 encontros</span>
+    <span class="pill">&#128187;&nbsp; Telepresencial síncrono</span>
+    <span class="pill">&#128100;&nbsp; Wesley Wagner de Brito Silva</span>
+  </div>
+  <div class="cover-meta mt-2">
+    <strong>Instrutor:</strong> Wesley Wagner de Brito Silva &nbsp;·&nbsp; Técnico Judiciário · TRE-PB
+  </div>
+</div>
+
+
+<!-- PÁGINA 2 — SOBRE O INSTRUTOR -->
+<div class="page inner-page">
+  <div class="section-header">
+    <span class="section-label">Sobre o Instrutor</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2 class="section-title">Quem ministra o curso</h2>
+
+  <div class="profile-layout">
+    <img
+      class="portrait"
+      src="../assets/wesley-photo-clean.png"
+      alt="Foto do instrutor Wesley Wagner de Brito Silva"
+      width="272"
+      loading="eager"
+    />
+    <div>
+      <p class="profile-name">Wesley Wagner de Brito Silva</p>
+      <p class="profile-role">Técnico Judiciário e Chefe de Cartório da 56ª Zona Eleitoral — TRE-PB</p>
+
+      <div class="profile-group">
+        <p class="profile-group-title">Formação Acadêmica</p>
+        <ul class="profile-list">
+          <li>Graduado em Gestão Pública</li>
+          <li>Pós-graduado em Direito Eleitoral</li>
+        </ul>
+      </div>
+
+      <div class="profile-group">
+        <p class="profile-group-title">Atuação Institucional</p>
+        <ul class="profile-list">
+          <li>Técnico Judiciário da Justiça Eleitoral desde 2016</li>
+          <li>Chefe de Cartório da 56ª Zona Eleitoral de Juazeirinho/PB desde 2018</li>
+          <li>Gestor do projeto "Integração de IA na elaboração de pareceres técnicos no TRE-PB"</li>
+          <li>Beta tester do MinutaIA no âmbito do TRE-PB</li>
+        </ul>
+      </div>
+
+      <div class="profile-group">
+        <p class="profile-group-title">Experiência como Instrutor</p>
+        <ul class="profile-list">
+          <li>Instrutor do workshop "Começando do Zero" — IA aplicada à Justiça Eleitoral, ministrado nos TREs do Amazonas e da Paraíba (março–maio de 2025)</li>
+          <li>Instrutor em treinamento sobre MinutaIA para magistrados do TRE-PB (outubro de 2025, ~3 horas)</li>
+          <li>Instrutor do curso "Mergulhando no MinutaIA com Modo Agêntico" — servidores de Tribunais do Trabalho e Eleitorais, via Google Meet</li>
+        </ul>
+      </div>
+
+      <div class="profile-group">
+        <p class="profile-group-title">Experiência em IA e Inovação</p>
+        <ul class="profile-list">
+          <li>Estudo e aplicação prática de IA na Justiça Eleitoral desde 2024</li>
+          <li>
+            Desenvolvedor do <strong>Calendário Eleitoral Interativo</strong> — adotado oficialmente pelo TRE-PB para as Eleições 2026 via projeto "Eleições na Zona"
+            <br>
+            <a href="https://calendarioeleitoral.app.br/" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:2px; font-size:8pt; font-weight:700; color:var(--blue); background:rgba(21,63,127,0.08); border:1px solid rgba(21,63,127,0.2); border-radius:4px; padding:1px 7px; text-decoration:none; letter-spacing:0.02em;">&#127760; calendarioeleitoral.app.br</a>
+          </li>
+          <li>Desenvolvedor de soluções digitais: sistema de inventário de arquivo físico, chatbot para mesários, cartilhas interativas de propaganda eleitoral</li>
+          <li>Desenvolvedor do <strong>Mega Agente Eleitoral</strong> — sistema multiagente para apoio a rotinas jurídicas e administrativas da Justiça Eleitoral</li>
+          <li>
+            Desenvolvedor do <strong>ELIS — Engenharia Legal e Inteligente de Sentenças</strong> — agente especializado em análise de processo e elaboração de minutas jurídicas
+            <br>
+            <a href="https://github.com/Wesley8pb/ELIS.git" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:2px; font-size:8pt; font-weight:700; color:var(--blue); background:rgba(21,63,127,0.08); border:1px solid rgba(21,63,127,0.2); border-radius:4px; padding:1px 7px; text-decoration:none; letter-spacing:0.02em;">&#128279; github.com/Wesley8pb/ELIS</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="footer-strip">
+    <span class="footer-label">Claude Code e Antigravity na Prática — Ementa</span>
+    <span class="footer-page">2</span>
+  </div>
+</div>
+
+
+<!-- PÁGINA 3 — OBJETIVO GERAL + INFO + OBJETIVOS ESPECÍFICOS -->
+<div class="page inner-page">
+  <div class="section-header">
+    <span class="section-label">Objetivo Geral</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2 class="section-title">O que o curso propõe</h2>
+
+  <div class="objective-block">
+    Capacitar servidores iniciantes da Justiça — com experiência apenas em ferramentas de chat (Claude.ai, Gemini, ChatGPT) — a compreenderem e utilizarem ferramentas de IA agêntica (<strong>Claude Code</strong> e <strong>Antigravity</strong>) em suas rotinas de trabalho, com foco em <strong>produtividade</strong>, <strong>segurança</strong> e <strong>aplicação prática imediata</strong>.
+  </div>
+
+  <div class="section-header mt-6">
+    <span class="section-label">Informações do Curso</span>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-cell gold">
+      <p class="info-label">Carga Horária</p>
+      <p class="info-value">10 horas</p>
+    </div>
+    <div class="info-cell gold">
+      <p class="info-label">Encontros</p>
+      <p class="info-value">3 encontros</p>
+    </div>
+    <div class="info-cell">
+      <p class="info-label">Modalidade</p>
+      <p class="info-value">Telepresencial síncrona com demonstrações ao vivo</p>
+    </div>
+    <div class="info-cell">
+      <p class="info-label">Público-alvo</p>
+      <p class="info-value">Servidores do judiciário sem experiência com ferramentas de IA agêntica</p>
+    </div>
+  </div>
+
+  <div class="section-header mt-6">
+    <span class="section-label">Objetivos Específicos</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2 class="section-title">Ao final do curso, o servidor será capaz de</h2>
+
+  <ul class="obj-list">
+    <li>Compreender a diferença entre IA de chat e IA agêntica e por que isso muda o que é possível produzir</li>
+    <li>Navegar com autonomia básica nas interfaces do Claude Code e do Antigravity</li>
+    <li>Entender os conceitos de agentes, tasks, contexto, janela de contexto, skills e tools sem jargão técnico</li>
+    <li>Gerar artefatos visuais úteis (fluxogramas, resumos visuais, estudos de caso interativos) a partir de documentos reais</li>
+    <li>Realizar pesquisa jurídica assistida por IA com fontes verificáveis</li>
+    <li>Analisar peças processuais com apoio das ferramentas, extraindo fatos, linha do tempo e questões relevantes</li>
+    <li>Acionar skills prontas e criar skills personalizadas para rotinas específicas do judiciário</li>
+    <li>Identificar e aplicar critérios básicos de sigilo, LGPD e revisão humana no uso institucional</li>
+  </ul>
+
+  <div class="spacer"></div>
+  <div class="footer-strip">
+    <span class="footer-label">Claude Code e Antigravity na Prática — Ementa</span>
+    <span class="footer-page">3</span>
+  </div>
+</div>
+
+
+<!-- PÁGINA 4 — ENCONTRO 1 -->
+<div class="page inner-page">
+  <div class="section-header">
+    <span class="section-label">Conteúdo Programático</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2 class="section-title">Encontro 1 — 4 horas</h2>
+
+  <div class="encontro-card">
+    <div class="encontro-header navy">
+      <p class="encontro-title">Base teórica &nbsp;·&nbsp; Interfaces &nbsp;·&nbsp; Artefatos Visuais</p>
+      <p class="encontro-focus">Foco: o servidor entende o que são ferramentas agênticas, navega nas duas interfaces e já vê um artefato visual útil gerado ao vivo a partir de um documento real.</p>
+    </div>
+    <table class="sched-table">
+      <thead>
+        <tr><th>Duração</th><th>Bloco</th><th>Descrição</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dur">~30 min</td>
+          <td class="block">Abertura e posicionamento</td>
+          <td>O que é IA agêntica, diferença do chat, por que Claude Code e Antigravity são diferentes do que já conhecem</td>
+        </tr>
+        <tr>
+          <td class="dur">~40 min</td>
+          <td class="block">Conceitos essenciais</td>
+          <td>Agentes, tarefas, contexto, janela de contexto, skills e tools — exemplos simples de ferramentas que o agente usa para agir no mundo, sem jargão técnico pesado</td>
+        </tr>
+        <tr>
+          <td class="dur">~40 min</td>
+          <td class="block">Interface do Claude Code</td>
+          <td>Navegação ao vivo: como iniciar, como dar tarefas, como o agente raciocina</td>
+        </tr>
+        <tr>
+          <td class="dur">~40 min</td>
+          <td class="block">Interface do Antigravity</td>
+          <td>Abordagem comparativa: onde se parece e onde diverge do Claude Code</td>
+        </tr>
+        <tr>
+          <td class="dur">~50 min</td>
+          <td class="block">Primeiro caso prático: artefatos visuais</td>
+          <td>Instrutor parte de um documento real e gera ao vivo: fluxograma de procedimento, resumo visual e estudo de caso interativo</td>
+        </tr>
+        <tr>
+          <td class="dur">~25 min</td>
+          <td class="block">Riscos essenciais</td>
+          <td>Sigilo, LGPD, alucinação e revisão humana — apresentados dentro do caso prático</td>
+        </tr>
+        <tr>
+          <td class="dur">~15 min</td>
+          <td class="block">Perguntas e fechamento</td>
+          <td>Síntese do encontro e antecipação do encontro 2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    Total: ~240 min (4 horas) &nbsp;·&nbsp; A ordem dos blocos pode ser ajustada conforme o ritmo da turma
+  </div>
+
+  <div class="spacer"></div>
+  <div class="footer-strip">
+    <span class="footer-label">Claude Code e Antigravity na Prática — Ementa</span>
+    <span class="footer-page">4</span>
+  </div>
+</div>
+
+
+<!-- PÁGINA 5 — ENCONTRO 2 -->
+<div class="page inner-page">
+  <div class="section-header">
+    <span class="section-label">Conteúdo Programático</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2 class="section-title">Encontro 2 — 3 horas</h2>
+
+  <div class="encontro-card">
+    <div class="encontro-header blue-2">
+      <p class="encontro-title">Pesquisa Jurídica &nbsp;·&nbsp; Análise de Processo &nbsp;·&nbsp; Profundidade Agêntica &nbsp;·&nbsp; Skills Prontas</p>
+      <p class="encontro-focus">Foco: o servidor usa as ferramentas em tarefas de maior complexidade e descobre que plataformas agênticas alcançam profundidade que o chat não consegue.</p>
+    </div>
+    <table class="sched-table">
+      <thead>
+        <tr><th>Duração</th><th>Bloco</th><th>Descrição</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dur">~30 min</td>
+          <td class="block">Pesquisa jurídica assistida</td>
+          <td>Pesquisa com fontes verificáveis, verificação de resultados e como evitar jurisprudência inventada</td>
+        </tr>
+        <tr>
+          <td class="dur">~40 min</td>
+          <td class="block">Análise de processo</td>
+          <td>Análise de peças ao vivo: extração de fatos, linha do tempo e questões relevantes</td>
+        </tr>
+        <tr>
+          <td class="dur">~45 min</td>
+          <td class="block">Demonstração: case de profundidade agêntica</td>
+          <td>Projeto real do instrutor mostrando como plataformas agênticas alcançam o que o chat não consegue produzir</td>
+        </tr>
+        <tr>
+          <td class="dur">~40 min</td>
+          <td class="block">Skills prontas do Claude Code</td>
+          <td>O que são, como acionar e como usar em rotinas do judiciário</td>
+        </tr>
+        <tr>
+          <td class="dur">~15 min</td>
+          <td class="block">Skills do Antigravity</td>
+          <td>Equivalente no Antigravity — comparação de capacidades entre as duas plataformas</td>
+        </tr>
+        <tr>
+          <td class="dur">~10 min</td>
+          <td class="block">Fechamento</td>
+          <td>O que o servidor já consegue fazer e o que vem no encontro 3</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    Total: ~180 min (3 horas) &nbsp;·&nbsp; Os casos práticos utilizam documentos reais do judiciário, preservada a devida anonimização
+  </div>
+
+  <div class="spacer"></div>
+  <div class="footer-strip">
+    <span class="footer-label">Claude Code e Antigravity na Prática — Ementa</span>
+    <span class="footer-page">5</span>
+  </div>
+</div>
+
+
+<!-- PÁGINA 6 — ENCONTRO 3 -->
+<div class="page inner-page">
+  <div class="section-header">
+    <span class="section-label">Conteúdo Programático</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2 class="section-title">Encontro 3 — 3 horas</h2>
+
+  <div class="encontro-card">
+    <div class="encontro-header gold-dark">
+      <p class="encontro-title">Skills Personalizadas &nbsp;·&nbsp; Projeto Prático &nbsp;·&nbsp; Horizonte do Possível</p>
+      <p class="encontro-focus">Foco: o servidor vê o horizonte do que é possível construir, cria uma skill personalizada e acompanha a construção de um projeto real ao vivo.</p>
+    </div>
+    <table class="sched-table">
+      <thead>
+        <tr><th>Duração</th><th>Bloco</th><th>Descrição</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dur">~40 min</td>
+          <td class="block">Criação de skills personalizadas</td>
+          <td>Como criar uma skill do zero para uma rotina do judiciário — demonstração completa com o instrutor</td>
+        </tr>
+        <tr>
+          <td class="dur">~50 min</td>
+          <td class="block">Projeto prático ao vivo</td>
+          <td>Mini-software construído ao vivo com Claude Code para uma rotina real do judiciário. O tema é revelado apenas no encontro — faz parte da experiência do curso.</td>
+        </tr>
+        <tr>
+          <td class="dur">~50 min</td>
+          <td class="block">Horizonte do possível</td>
+          <td>Projeto agêntico completo do instrutor mostrando o que é possível alcançar com domínio progressivo dessas ferramentas</td>
+        </tr>
+        <tr>
+          <td class="dur">~40 min</td>
+          <td class="block">Fechamento do curso</td>
+          <td>Síntese da jornada, próximos passos, onde aprender mais e perguntas finais</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    Total: ~180 min (3 horas) &nbsp;·&nbsp; O projeto ao vivo é a peça central deste encontro — o tema-surpresa integra conceitos dos encontros anteriores
+  </div>
+
+  <div class="spacer"></div>
+  <div class="footer-strip">
+    <span class="footer-label">Claude Code e Antigravity na Prática — Ementa</span>
+    <span class="footer-page">6</span>
+  </div>
+</div>
+
+
+<!-- PÁGINA 7 — RESULTADOS ESPERADOS -->
+<div class="page inner-page">
+  <div class="section-header">
+    <span class="section-label">Resultados Esperados</span>
+    <div class="section-rule"></div>
+  </div>
+  <h2 class="section-title">O que o servidor consegue ao final dos 3 encontros</h2>
+
+  <ul class="results-list">
+    <li>Distinguir IA agêntica de chat e entender por que isso muda o que é possível produzir</li>
+    <li>Navegar nas interfaces do Claude Code e do Antigravity com autonomia básica</li>
+    <li>Gerar artefatos visuais úteis a partir de documentos reais do judiciário</li>
+    <li>Realizar pesquisa jurídica assistida com fontes verificáveis</li>
+    <li>Analisar peças processuais com apoio das ferramentas, extraindo fatos, linha do tempo e questões relevantes</li>
+    <li>Acionar skills prontas e criar skills simples personalizadas para sua rotina</li>
+    <li>Reconhecer o horizonte do que é possível construir com domínio progressivo das ferramentas</li>
+    <li>Aplicar critérios básicos de sigilo, LGPD e revisão humana no uso institucional</li>
+  </ul>
+
+  <div style="margin-top: 10mm; display: grid; grid-template-columns: repeat(3,1fr); gap: 5mm;">
+    <div style="background: white; border: 1px solid var(--line); border-top: 3px solid var(--navy); border-radius: 0 0 6px 6px; padding: 5mm 6mm; text-align: center;">
+      <div style="font-size: 22pt; font-weight: 800; color: var(--navy);">10h</div>
+      <div style="font-size: 8pt; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Carga Horária Total</div>
+    </div>
+    <div style="background: white; border: 1px solid var(--line); border-top: 3px solid var(--blue-2); border-radius: 0 0 6px 6px; padding: 5mm 6mm; text-align: center;">
+      <div style="font-size: 22pt; font-weight: 800; color: var(--blue-2);">3</div>
+      <div style="font-size: 8pt; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Encontros Síncronos</div>
+    </div>
+    <div style="background: white; border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 0 0 6px 6px; padding: 5mm 6mm; text-align: center;">
+      <div style="font-size: 22pt; font-weight: 800; color: var(--gold);">8</div>
+      <div style="font-size: 8pt; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Objetivos Específicos</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 8mm; background: var(--navy); border-radius: 6px; padding: 6mm 8mm; color: white;">
+    <p style="margin:0; font-size: 12pt; line-height: 1.6; opacity: 0.9;">
+      <strong style="color: var(--gold);">Nota sobre revisão humana:</strong>&nbsp;
+      Todo o uso de IA agêntica abordado neste curso pressupõe supervisão e revisão humana. As ferramentas ampliam a capacidade do servidor, mas não substituem o julgamento profissional, a responsabilidade funcional e o cumprimento das normas institucionais de sigilo e proteção de dados.
+    </p>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="footer-strip">
+    <span class="footer-label">Claude Code e Antigravity na Prática — Ementa</span>
+    <span class="footer-page">7</span>
+  </div>
+</div>
+
+</body>
+</html>
