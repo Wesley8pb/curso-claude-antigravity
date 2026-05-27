@@ -582,6 +582,21 @@
     .text-blue  { color: var(--blue); }
     .text-muted { color: var(--muted); }
     .spacer { flex: 1; }
+
+    /* ── CTA — idêntico ao site principal ── */
+    .btn-primary {
+      display: inline-block;
+      background: #c3992e;
+      color: #0d1424;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 16px 40px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      font-family: "Segoe UI", "Aptos", "Calibri", sans-serif;
+    }
+    .btn-primary:hover { opacity: 0.88; }
   </style>
 </head>
 <body>
@@ -597,13 +612,7 @@
   <div class="rule"></div>
   <!-- Botão de retorno -->
   <div style="text-align:center; margin-bottom:8mm;">
-    <a href="../index.html"
-       style="display:inline-block; background:#c3992e; color:#0d1424;
-              font-family:'Segoe UI','Aptos','Calibri',sans-serif;
-              font-size:22pt; font-weight:800; letter-spacing:0.04em;
-              padding:8mm 28mm; border-radius:8px; text-decoration:none;">
-      ← Voltar ao site do curso
-    </a>
+    <a href="../index.html" class="btn-primary">← Voltar ao site do curso</a>
   </div>
 
   <div class="cover-visual">
